@@ -1,0 +1,3 @@
+[submodule "bundle/vim-change-inside-surroundings"]
+	path = bundle/vim-change-inside-surroundings
+	url = ssh://git@ssh.github.com:443/briandoll/change-inside-surroundings.vim.git

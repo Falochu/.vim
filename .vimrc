@@ -83,7 +83,7 @@ set t_Co=256
 colorscheme solarized
 "------------------------------------------------------------------------------"
 "                           Whitespace characters                              "
-set listchars=eol:¬,tab:»»,space:·
+set listchars=eol:¬,tab:»-,space:·
 set list
 hi NonText ctermfg=14 ctermbg=15
 hi SpecialKey ctermfg=14 ctermbg=15

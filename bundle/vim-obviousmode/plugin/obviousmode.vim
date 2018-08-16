@@ -37,7 +37,7 @@ if !exists('g:obviousModeCmdwinHi')
 endif
 
 if !exists('g:obviousModeModifiedCurrentHi')
-  let g:obviousModeModifiedCurrentHi = 'term=reverse ctermbg=30 guibg=darkcyan'
+  let g:obviousModeModifiedCurrentHi = 'term=reverse ctermbg=50 guibg=darkcyan'
 endif
 
 if !exists('g:obviousModeModifiedNonCurrentHi')

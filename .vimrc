@@ -16,7 +16,6 @@ filetype on               " Auto detect file type
 filetype indent on        " Make auto-indent specific to file type
 filetype plugin on        " Load plug-ins to identify additional types
 filetype plugin indent on " Make auto-indent specific to file type
-au BufNewFile,BufRead *.pcc set filetype=c " Treat .pcc files as C code
 set showmatch             " Highlight matching parenthesis/bracket/brace
 "------------------------------------------------------------------------------"
 "                              Spell Checking                                  "
@@ -28,8 +27,8 @@ set autoindent            " Turn on auto-indent
 set smartindent           " Auto-indent at start of new code block
 set copyindent            " After [ENTER], start with indentation of above line
 set expandtab             " When [TAB] is pressed, insert spaces, not \t
-set shiftwidth=4          " >>, <<, and auto-indent width (in spaces)
-set softtabstop=4         " When [TAB] is pressed, insert 4 spaces
+set shiftwidth=2          " >>, <<, and auto-indent width (in spaces)
+set softtabstop=2         " When [TAB] is pressed, insert 2 spaces
 set backspace=indent,eol,start " Make backspace undo full indents, etc.
 "------------------------------------------------------------------------------"
 "                               Search Options                                 "
@@ -44,6 +43,9 @@ nmap j gj
 nmap k gk
 vmap j gj
 vmap k gk
+" Control-J and K allow moving by real lines, when needed
+noremap <C-J> j
+noremap <C-K> k
 " treat ; the same as : when in normal mode (so you don't have to hold shift)
 nmap ; :
 " "jj" pressed in quick succession counts as escape
@@ -54,9 +56,7 @@ nmap <leader>Y "+Y
 nmap <leader>p "+p
 " \l runs pdflatex on the current file
 nmap <leader>l :!pdflatex % && rm *.log *.aux<CR>
-" \c changes in the current parentheses, brackets, or braces
-
-" backslash-space clears the highlighting of the previous search
+" backslash-enter clears the highlighting of the previous search
 nmap <silent> <leader><return> :nohlsearch<CR>
 " backslash-m removes ^M characters from windows files
 nmap <Leader>m mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm
@@ -71,6 +71,10 @@ let @w='I Aj'
 nmap <f5> @w
 " F6 puts a blank line after current line, then moves to the next line
 nmap <f6> oj
+" F9 inserts the check-mark char whose code point I can never remember (U+2713)
+nmap <f9> r✓
+" F10 inserts the ballot X-mark char whose code point I can never remember
+nmap <f10> r✗
 " F12 key re-builds the tag listing for the current project
 nmap <f12> :!ctags -R<CR>
 " Magic that somehow fixes arrow keys in insert mode when vim is inside tmux 
